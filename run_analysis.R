@@ -38,6 +38,7 @@ final <- actnames %>%
           group_by(subjectid, type) %>%
           summarise_all(funs(mean))
 
-## Final ordering
+## Final ordering and writing
 final <- final[order(final$subjectid, final$activityid), ]
+write.table(final, ".//final.txt")
 
